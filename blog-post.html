@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Weight of Being Understood — mrshexii</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#040307;--void:#080612;--deep:#0f0b1a;--border:rgba(160,120,255,0.13);--muted:rgba(160,120,255,0.22);--accent:#a87fff;--gold:#c9a86c;--rose:#c97faa;--text:#ede6ff;--tm:rgba(237,230,255,0.52);--tf:rgba(237,230,255,0.24);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;line-height:1.85;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.4;}
+body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 50% 40% at 50% 20%,rgba(201,127,170,.09),transparent 65%);pointer-events:none;z-index:0;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;background:linear-gradient(to bottom,rgba(4,3,7,.96),transparent);backdrop-filter:blur(4px);transition:background .3s;}
+nav.scrolled{background:rgba(4,3,7,.97)!important;}
+.nav-logo{font-family:'Cinzel',serif;font-size:16px;letter-spacing:.22em;color:var(--accent);text-decoration:none;text-transform:uppercase;}
+.nav-back{font-family:'Raleway',sans-serif;font-weight:300;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--tm);text-decoration:none;transition:color .3s;display:flex;align-items:center;gap:8px;}
+.nav-back span{color:var(--accent);display:inline-block;transition:transform .3s;}
+.nav-back:hover{color:var(--accent);}
+.nav-back:hover span{transform:translateX(-4px);}
+
+/* POST HEADER */
+.post-header{min-height:55vh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem 3rem 4rem;position:relative;z-index:1;border-bottom:1px solid var(--border);max-width:860px;margin:0 auto;}
+.post-meta{display:flex;gap:1rem;align-items:center;margin-bottom:1.5rem;animation:fadeUp 1s ease both;}
+.post-date{font-family:'Raleway',sans-serif;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--tf);}
+.post-tag{font-family:'Raleway',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--rose);border:1px solid rgba(201,127,170,.28);padding:3px 10px;}
+.post-title{font-family:'Cinzel',serif;font-size:clamp(2rem,6vw,4rem);font-weight:400;letter-spacing:.05em;color:var(--text);line-height:1.2;margin-bottom:.5em;animation:fadeUp 1s .1s ease both;}
+.post-title-ur{font-family:'Noto Nastaliq Urdu',serif;font-size:clamp(1.1rem,2.5vw,1.6rem);color:var(--rose);direction:rtl;display:block;margin-bottom:1.5rem;line-height:2;animation:fadeUp 1s .2s ease both;}
+.post-rule{width:60px;height:1px;background:linear-gradient(to right,var(--rose),transparent);animation:fadeUp 1s .3s ease both;}
+
+/* POST BODY */
+.post-body{max-width:680px;margin:0 auto;padding:5rem 2rem 8rem;position:relative;z-index:1;}
+.post-body p{font-size:1.08rem;font-weight:300;color:var(--tm);line-height:2.1;margin-bottom:1.8rem;}
+.post-body p.lead{font-size:1.25rem;font-style:italic;color:var(--text);line-height:1.95;}
+.post-body blockquote{border-left:2px solid var(--rose);padding:1rem 0 1rem 2rem;margin:2.5rem 0;font-style:italic;font-size:1.1rem;color:var(--tm);line-height:2;}
+.post-body .urdu-insert{font-family:'Noto Nastaliq Urdu',serif;font-size:1.2rem;direction:rtl;color:var(--accent);text-align:right;display:block;margin:2.5rem 0;line-height:2.5;padding:1.5rem;border:1px solid var(--border);background:var(--void);}
+.post-body h3{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:400;letter-spacing:.1em;color:var(--text);margin:3rem 0 1.2rem;}
+.post-divider{display:flex;align-items:center;gap:1rem;margin:3rem 0;color:var(--tf);font-size:12px;letter-spacing:.3em;}
+.post-divider::before,.post-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* POST FOOTER */
+.post-footer{border-top:1px solid var(--border);padding:3rem 2rem;max-width:680px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;}
+.pf-back{font-family:'Raleway',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--tm);text-decoration:none;transition:color .3s;}
+.pf-back:hover{color:var(--rose);}
+.pf-logo{font-family:'Cinzel',serif;font-size:12px;letter-spacing:.2em;color:var(--accent);opacity:.4;text-decoration:none;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:640px){nav{padding:1.2rem 1.5rem;}.post-header{padding:8rem 1.5rem 3rem;}.post-body{padding:3.5rem 1.5rem 6rem;}}
+</style>
+</head>
+<body>
+<nav id="top-nav">
+  <a href="index.html" class="nav-logo">mrshexii</a>
+  <a href="blog.html" class="nav-back"><span>←</span> All Confessions</a>
+</nav>
+
+<div class="post-header">
+  <div class="post-meta">
+    <span class="post-date">April 2026</span>
+    <span class="post-tag">Confession</span>
+  </div>
+  <h1 class="post-title">The Weight of Being Understood</h1>
+  <span class="post-title-ur">سمجھے جانے کا بوجھ</span>
+  <div class="post-rule"></div>
+</div>
+
+<div class="post-body">
+  <p class="lead">There are people who enter your life and rearrange the furniture of your soul without asking permission. You wake up one day and nothing is where you left it — and somehow, impossibly, it feels more like home than before.</p>
+
+  <p>I have spent most of my life trying to explain myself to people who were never really listening. Not out of cruelty — they just had their own noise. Their own weather. And I was just another sound in it.</p>
+
+  <p>I became very good at abbreviating myself. At giving people the edited version. The one that fits comfortably into a conversation without requiring too much of them. I packaged myself in ways that made me easier to hold.</p>
+
+  <blockquote>There is something both relieving and devastating about being truly seen. Relieving because you no longer have to perform. Devastating because you realise how long you have been performing.</blockquote>
+
+  <span class="urdu-insert">جو مجھے سمجھے وہ مجھ سے ڈرتا بھی ہے<br>کیونکہ وہ جانتا ہے میں کیا ہوں</span>
+
+  <p>And then one day, someone arrived who heard what I hadn't even said yet. Who looked at the version of me I was presenting and said — quietly, without drama — that they could see the other one too. The unabbreviated one.</p>
+
+  <p>That kind of recognition is terrifying. It rearranges you.</p>
+
+  <div class="post-divider">✦</div>
+
+  <h3>The Problem with Being Found</h3>
+
+  <p>The problem with being found is that you can no longer pretend to be lost. You cannot retreat into the comfortable smallness of being misunderstood. Someone has mapped you. Someone has memorised your geography.</p>
+
+  <p>I think that is why some of us keep choosing people who cannot quite reach us. There is safety in the gap. In the space between who you are and who they think you are.</p>
+
+  <p>But I am tired of living in that gap. I am tired of being a rumour of myself.</p>
+
+  <blockquote>Ghalib once wrote that thousands of desires live in him, each one worth dying for. I wonder if being truly understood was one of them — and whether he feared it as much as he wanted it.</blockquote>
+
+  <p>Maybe this is what poetry is for. Not to be understood by a single person in a single moment — but to send your most honest self forward into time, and trust that somewhere, someone will receive it.</p>
+
+  <p>This blog is that trust.</p>
+
+  <span class="urdu-insert">یہ الفاظ میرے نہیں<br>یہ وہ باتیں ہیں جو میرے اندر بند تھیں</span>
+
+  <p>If you are reading this and something in it sounds familiar — welcome. You are not alone in it. Whatever it is.</p>
+</div>
+
+<div class="post-footer">
+  <a href="blog.html" class="pf-back">← All Confessions</a>
+  <a href="index.html" class="pf-logo">mrshexii</a>
+  <a href="blog.html" class="pf-back">Next Post →</a>
+</div>
+
+<script>
+const nav=document.getElementById('top-nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+</script>
+</body>
+</html>

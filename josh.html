@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Josh Malihabadi — mrshexii</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@200;300;400;500&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#040307;--void:#080612;--deep:#0f0b1a;--border:rgba(160,120,255,0.13);--muted:rgba(160,120,255,0.22);--accent:#a87fff;--gold:#c9a86c;--text:#ede6ff;--tm:rgba(237,230,255,0.52);--tf:rgba(237,230,255,0.24);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--text);font-family:"Cormorant Garamond",Georgia,serif;font-size:18px;line-height:1.7;overflow-x:hidden;}
+body::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.4;}
+body::after{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 25%,rgba(108,63,255,.11),transparent 70%);pointer-events:none;z-index:0;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;background:linear-gradient(to bottom,rgba(4,3,7,.96),transparent);backdrop-filter:blur(4px);transition:background .3s;}
+nav.scrolled{background:rgba(4,3,7,.97)!important;}
+.nav-logo{font-family:"Cinzel",serif;font-size:16px;letter-spacing:.22em;color:var(--accent);text-decoration:none;text-transform:uppercase;}
+.nav-back{font-family:"Raleway",sans-serif;font-weight:300;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--tm);text-decoration:none;transition:color .3s;display:flex;align-items:center;gap:8px;}
+.nav-back span{color:var(--accent);transition:transform .3s;display:inline-block;}
+.nav-back:hover{color:var(--accent);}
+.nav-back:hover span{transform:translateX(-4px);}
+.poet-hero{min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:9rem 2rem 5rem;position:relative;z-index:1;border-bottom:1px solid var(--border);}
+.ph-num{font-family:"Raleway",sans-serif;font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:1.5rem;animation:fadeUp 1s ease both;}
+.ph-name-en{font-family:"Cinzel",serif;font-size:clamp(2.2rem,7vw,5rem);font-weight:400;letter-spacing:.07em;color:var(--text);margin-bottom:.2em;animation:fadeUp 1s .12s ease both;}
+.ph-name-ur{font-family:"Noto Nastaliq Urdu",serif;font-size:clamp(1.2rem,3vw,1.9rem);color:var(--accent);direction:rtl;margin-bottom:1.2rem;animation:fadeUp 1s .22s ease both;line-height:2;}
+.ph-years{font-family:"Raleway",sans-serif;font-size:11px;letter-spacing:.35em;color:var(--tf);animation:fadeUp 1s .3s ease both;}
+.ph-rule{width:80px;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent);margin:1.8rem auto;animation:fadeUp 1s .38s ease both;}
+.ph-bio{font-style:italic;font-weight:300;font-size:clamp(.95rem,1.8vw,1.15rem);color:var(--tm);max-width:500px;line-height:2;animation:fadeUp 1s .46s ease both;}
+.poet-body{max-width:800px;margin:0 auto;padding:6rem 2rem 8rem;position:relative;z-index:1;}
+.sher-section-title{font-family:"Raleway",sans-serif;font-size:10px;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);opacity:.7;text-align:center;display:flex;align-items:center;gap:1.5rem;margin-bottom:3.5rem;}
+.sher-section-title::before,.sher-section-title::after{content:"";flex:1;height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);}
+.sher-card{background:var(--void);border:1px solid var(--border);padding:3rem 3.5rem;text-align:center;position:relative;overflow:hidden;margin-bottom:2px;opacity:0;transform:translateY(24px);transition:opacity .85s,transform .85s,border-color .4s,background .4s;}
+.sher-card.in{opacity:1;transform:translateY(0);}
+.sher-card:hover{border-color:var(--muted);background:var(--deep);}
+.sher-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(108,63,255,.05),transparent 60%);opacity:0;transition:opacity .4s;}
+.sher-card:hover::before{opacity:1;}
+.sc-num{font-family:"Cinzel",serif;font-size:10px;letter-spacing:.3em;color:var(--accent);opacity:.35;margin-bottom:1.5rem;display:block;}
+.sc-urdu{font-family:"Noto Nastaliq Urdu",serif;font-size:clamp(1.1rem,2.8vw,1.5rem);font-weight:500;color:var(--text);line-height:2.5;direction:rtl;unicode-bidi:embed;margin-bottom:1.5rem;}
+.sc-divider{width:40px;height:1px;background:linear-gradient(to right,transparent,var(--muted),transparent);margin:0 auto 1.5rem;}
+.sc-trans{font-family:"Cormorant Garamond",serif;font-size:1rem;font-style:italic;font-weight:300;color:var(--tf);line-height:2.1;max-width:500px;margin:0 auto;}
+.sc-ornament{font-family:"Cinzel",serif;font-size:6rem;font-weight:700;color:var(--accent);opacity:.05;position:absolute;top:.5rem;left:1.5rem;line-height:1;pointer-events:none;}
+.poet-nav-footer{border-top:1px solid var(--border);padding:3rem 2rem;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;max-width:800px;margin:0 auto;}
+.pnf-back{font-family:"Raleway",sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--tm);text-decoration:none;transition:color .3s;}
+.pnf-back:hover{color:var(--accent);}
+.pnf-logo{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.2em;color:var(--accent);opacity:.4;text-decoration:none;}
+.pnf-next{font-family:"Raleway",sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--tm);text-decoration:none;transition:color .3s;}
+.pnf-next:hover{color:var(--accent);}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .85s,transform .85s;}
+.rv.in{opacity:1;transform:translateY(0);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:640px){nav{padding:1.2rem 1.5rem;}.sher-card{padding:2rem 1.5rem;}.poet-body{padding:4rem 1.5rem 6rem;}}
+</style>
+</head>
+<body>
+<nav id="top-nav">
+  <a href="index.html" class="nav-logo">mrshexii</a>
+  <a href="index.html#poets" class="nav-back"><span>←</span> Poets Archive</a>
+</nav>
+<div class="poet-hero">
+  <p class="ph-num">poets archive — IX</p>
+  <h1 class="ph-name-en">Josh Malihabadi</h1>
+  <p class="ph-name-ur">جوش ملیح آبادی</p>
+  <p class="ph-years">1898 — 1982 · Urdu</p>
+  <div class="ph-rule"></div>
+  <p class="ph-bio">Shair-e-Inquilab — the thunderous voice of revolution. Josh's poetry roars with fire, defiance and an intoxicating love of life.</p>
+</div>
+<div class="poet-body">
+  <div class="sher-section-title rv">اشعار</div>
+    <div class="sher-card rv">
+    <span class="sc-ornament">"</span>
+    <span class="sc-num">I</span>
+    <p class="sc-urdu">اے جوانوں یہ زمیں ہے تمہاری میراث<br>اس کو سینچو اپنے خوں سے اپنے جذبات سے</p>
+    <div class="sc-divider"></div>
+    <p class="sc-trans">O youth, this earth is your inheritance — water it with your blood and your passions.</p>
+  </div>
+  <div class="sher-card rv">
+    <span class="sc-ornament">"</span>
+    <span class="sc-num">II</span>
+    <p class="sc-urdu">انقلاب آتا ہے تو چھاتی پر قدم رکھ کر<br>ہر بلا سے لڑ کے تب ملتا ہے چین دل کو</p>
+    <div class="sc-divider"></div>
+    <p class="sc-trans">Revolution comes only by stepping over one's own chest — the heart finds peace only after fighting every calamity.</p>
+  </div>
+  <div class="sher-card rv">
+    <span class="sc-ornament">"</span>
+    <span class="sc-num">III</span>
+    <p class="sc-urdu">پی کے مئے ناب یہ کہتا ہوں میں<br>زندگی کیف و سرور و شادی ہے</p>
+    <div class="sc-divider"></div>
+    <p class="sc-trans">Having drunk the pure wine, I say this: life is ecstasy, joy and celebration.</p>
+  </div>
+  <div class="sher-card rv">
+    <span class="sc-ornament">"</span>
+    <span class="sc-num">IV</span>
+    <p class="sc-urdu">جو سر اٹھائے وہ سر کٹ جائے<br>جو آگ لگائے وہ جل مر جائے</p>
+    <div class="sc-divider"></div>
+    <p class="sc-trans">Whoever raises their head, let it be cut — whoever lights the fire, let them burn in it.</p>
+  </div>
+  <div class="sher-card rv">
+    <span class="sc-ornament">"</span>
+    <span class="sc-num">V</span>
+    <p class="sc-urdu">کہاں تک چلو گے اندھیروں میں یاروں<br>ستاروں کو دیکھو چراغ جلاؤ</p>
+    <div class="sc-divider"></div>
+    <p class="sc-trans">How far will you walk in darkness, my friends — look to the stars, light the lamp.</p>
+  </div>
+</div>
+<div class="poet-nav-footer">
+  <a href="sahir.html" class="pnf-back">← Sahir Ludhianvi</a>
+  <a href="index.html" class="pnf-logo">mrshexii</a>
+  <a href="jalib.html" class="pnf-next">Habib Jalib →</a>
+</div>
+<script>
+const nav=document.getElementById("top-nav");
+window.addEventListener("scroll",()=>nav.classList.toggle("scrolled",window.scrollY>60));
+const els=document.querySelectorAll(".rv,.sher-card");
+const obs=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add("in"),i*100);});},{threshold:.1});
+els.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
